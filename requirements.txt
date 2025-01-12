@@ -2,9 +2,8 @@
 
 openai==0.27.0              # OpenAI API for ChatGPT integration
 pyaudio==0.2.11             # PyAudio for audio input/output
-speechrecognition==3.8.1    # Speech Recognition library for wake word detection and speech-to-text
+SpeechRecognition==3.8.1    # Speech Recognition library for wake word detection and speech-to-text
 gpiozero==1.6.2             # GPIO control for Raspberry Pi (Python)
-espeakng==1.49.0            # Text-to-Speech engine for voice output
+espeakng==1.0.3             # Text-to-Speech engine for voice output
 Flask==2.2.2                # Flask for API framework
 torch==1.13.0               # PyTorch for model inference
-tensorflow==2.11.0          # TensorFlow for model inference (if using TensorFlow models)

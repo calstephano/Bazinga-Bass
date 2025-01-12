@@ -1,22 +1,41 @@
-#!/bin/bash
+#!/bin/sh
+
+# Exit immediately if a command fails
+set -e
 
 # Set up the project directory
-echo "Setting up the project..."
+echo "Setting up the Big Mouth Bazinga Bass project..."
 
-# Step 1: Upgrade pip to the latest version
+# Step 1: Check for Python3
+echo "Checking for Python3, pip3, and python3-dev..."
+if ! command -v python3 >/dev/null 2>&1; then
+    echo "Python3 is not installed. Installing Python3..."
+    sudo apt update
+    sudo apt install -y python3
+fi
+
+# Step 2: Check for Pip3
+if ! command -v pip3 >/dev/null 2>&1; then
+    echo "pip3 is not installed. Installing pip3..."
+    sudo apt install -y python3-pip
+fi
 echo "Upgrading pip..."
-pip install --upgrade pip
+pip3 install --upgrade pip
 
-# Step 2: Install Python dependencies from requirements.txt
-echo "Installing dependencies from requirements.txt..."
-pip install -r requirements.txt
+# Step 3: Install system dependencies
+sudo apt install -y python3-pip python3-dev portaudio19-dev 
 
-# Step 3: Check if TensorFlow or PyTorch is installed correctly
-echo "Verifying TensorFlow and PyTorch installations..."
-python -c "import torch; print('PyTorch version:', torch.__version__)"
-python -c "import tensorflow as tf; print('TensorFlow version:', tf.__version__)"
+# Step 4: Install Python dependencies
+if [ -f "requirements.txt" ]; then
+    echo "Installing dependencies from requirements.txt..."
+    pip3 install -r requirements.txt
+else
+    echo "Error: requirements.txt not found. Skipping dependency installation."
+    exit 1
+fi
 
-# Step 4: Finished
-echo "Setup complete."
+# Final Step: Success message
+echo "------------------------------------------------------------------"
+echo "Setup complete! All dependencies have been installed successfully."
 
-# End
+# End of script
