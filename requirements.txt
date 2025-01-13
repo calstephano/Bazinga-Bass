@@ -7,3 +7,4 @@ Flask==2.2.2                # Flask for API framework
 torch==1.13.0               # PyTorch for model inference
 vosk==0.3.45                # Vosk for offline speech-to-text (STT) and real-time speech recognition
 sounddevice==0.4.6          # Sounddevice for real-time audio input/output using Vosk
+pygame==2.6.1               

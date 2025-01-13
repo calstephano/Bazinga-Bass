@@ -5,7 +5,7 @@ import subprocess
 import pygame
 from vosk import Model, KaldiRecognizer
 
-# Set up logging to match the format from `run.py`
+# Set up logging
 logging.basicConfig(level=logging.INFO)
 
 # Paths
