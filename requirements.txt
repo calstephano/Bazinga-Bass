@@ -2,9 +2,11 @@
 
 openai==0.27.0              # OpenAI API for ChatGPT integration
 pyaudio==0.2.11             # PyAudio for audio input/output
+SpeechRecognition==3.8.1    # Speech Recognition library for wake word detection and speech-to-text
 gpiozero==1.6.2             # GPIO control for Raspberry Pi (Python)
-Flask==2.2.2                # Flask for API framework
-torch==1.13.0               # PyTorch for model inference
-vosk==0.3.45                # Vosk for offline speech-to-text (STT) and real-time speech recognition
-sounddevice==0.4.6          # Sounddevice for real-time audio input/output using Vosk
-pygame==2.6.1               
+espeakng==1.0.3             # Text-to-Speech engine for voice output
+torch==2.5.1                # PyTorch for model inference
+vosk==0.3.45                # For speech-to-text
+torchaudio==2.5.1           # For audio processing
+soundfile==0.12.1           # For handling audio files
+pyttsx3==2.98               # For converting text to speech
